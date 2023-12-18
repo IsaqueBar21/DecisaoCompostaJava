@@ -1,0 +1,32 @@
+package teste;
+
+import javax.swing.JOptionPane;
+
+import exercicios.Funcionario;
+
+public class TestaFuncionario {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//declarar variaveis
+		String nome;
+		float salario;
+		int id;
+		
+		//entradas
+		nome = JOptionPane.showInputDialog("Insira o nome do Funcionário: ");
+		id = Integer.parseInt(JOptionPane.showInputDialog("Qual o número do Funcionário?"));
+		salario = Integer.parseInt(JOptionPane.showInputDialog("Qual o salário do Funcionário?"));
+	
+	
+		//objeto
+		Funcionario funcionario = new Funcionario(nome, salario, id);
+		
+		//processamento
+		funcionario.calcularReajusteSalario();
+		
+		//saida
+		JOptionPane.showMessageDialog(null, funcionario.mostrarDados());
+}
+}
